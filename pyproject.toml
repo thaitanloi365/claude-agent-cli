@@ -1,0 +1,41 @@
+[project]
+name = "claude-agent-cli"
+version = "0.1.0"
+description = "Claude Code-style terminal coding agent that bills your Anthropic API key, so Claude Console promotional credits (Claude for Startups, Max/Team API credits) work from your CLI. Built on the Claude Agent SDK."
+readme = "README.md"
+keywords = [
+    "claude", "claude-code", "claude-agent-sdk", "anthropic", "cli", "coding-agent",
+    "ai-coding-assistant", "promotional-credits", "api-credits", "claude-for-startups",
+    "claude-console", "terminal", "llm", "mcp",
+]
+authors = [
+    { name = "Joe" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "claude-agent-sdk>=0.2.168",
+    "prompt-toolkit>=3.0.53",
+    "pydantic>=2.14.1",
+    "python-dotenv>=1.2.4",
+    "rich>=15.0.0",
+    "typer>=0.27.3",
+]
+
+[project.urls]
+Homepage = "https://github.com/thaitanloi365/claude-agent-cli"
+Issues = "https://github.com/thaitanloi365/claude-agent-cli/issues"
+
+[project.scripts]
+cagent = "claude_agent_cli:main"
+claude-agent = "claude_agent_cli:main"
+claude-agent-cli = "claude_agent_cli:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+]
